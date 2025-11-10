@@ -1,0 +1,456 @@
+/* src/App.css */
+
+.App {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* 1. Navegación y Encabezado */
+.App-header {
+  border-bottom: 1px solid var(--bg-dark-secondary);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.App-header h1 {
+  color: var(--text-light-primary);
+  margin: 0;
+}
+
+.App-nav {
+  display: flex;
+  flex-wrap: wrap; /* Para que se ajuste en pantallas chicas */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.App-nav button {
+  background: transparent; /* Fondo transparente */
+  color: var(--text-light-secondary);
+  border: none;
+  border-bottom: 2px solid transparent; /* Borde sutil */
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.App-nav button:hover {
+  color: var(--text-light-primary);
+}
+
+.App-nav button.active {
+  /* El brief pide texto claro y línea de acento */
+  color: var(--text-light-primary);
+  border-bottom: 2px solid var(--accent-green);
+}
+
+/* 2. Contenedores y Tarjetas */
+.Tab-container {
+  /* Contenedor ligeramente más claro que el fondo */
+  background-color: var(--bg-dark-secondary);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #334155; /* Borde sutil */
+}
+
+.Tab-container h3 {
+  margin-top: 0;
+  color: var(--text-light-primary);
+}
+
+/* 3. Botones de Acento */
+.btn {
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+/* Verde (Eco / Éxito) */
+.btn-green {
+  background-color: var(--accent-green);
+  color: #000; /* Texto oscuro para alto contraste */
+}
+.btn-green:hover {
+  opacity: 0.85;
+}
+
+/* Púrpura (IA) */
+.btn-purple {
+  background-color: var(--accent-purple);
+  color: var(--text-light-primary);
+}
+.btn-purple:hover {
+  opacity: 0.85;
+}
+
+/* 4. Formularios */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-light-secondary);
+}
+
+/* 5. Lista/Tabla de Requisitos */
+.requisitos-list {
+  list-style: none;
+  padding: 0;
+}
+.requisitos-list li {
+  background-color: var(--bg-dark-primary);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #334155;
+}
+
+/* 6. Badges de Prioridad (Cápsulas) */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: var(--text-light-primary);
+}
+
+.badge-high {
+  background-color: var(--priority-high);
+}
+.badge-medium {
+  background-color: var(--priority-medium);
+}
+.badge-low {
+  background-color: var(--priority-low);
+}
+
+/* 7. Optimizador (pre tag) */
+.optimizer-result {
+  background-color: var(--bg-dark-primary);
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap; /* Para que el texto no se desborde */
+  margin-top: 15px;
+}
+
+/* 8. Estilo de GrapesJS (Dark Mode) */
+/* Aplicamos estilos para que los paneles de GrapesJS sean oscuros */
+.gjs-container .gjs-pn-views-container,
+.gjs-container .gjs-pn-views,
+.gjs-container .gjs-pn-panel,
+.gjs-container .gjs-blocks-cs,
+.gjs-container .gjs-block {
+  background-color: var(--bg-dark-secondary) !important;
+  color: var(--text-light-primary) !important;
+}
+.gjs-container .gjs-block-label {
+    color: var(--text-light-primary) !important;
+}
+.gjs-container .gjs-cv-canvas {
+  background-color: #fff; /* El lienzo de diseño se mantiene blanco */
+}
+.gjs-container .gjs-block {
+  border: 1px solid var(--accent-green); /* Borde verde "Eco" */
+}
+
+/* 9. Dashboard (Gráfico) */
+.dashboard-container {
+  margin-top: 20px;
+  background-color: var(--bg-dark-primary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+/* 10. Estilos para la Tab de Arquitectura */
+.architecture-controls {
+  display: flex;
+  flex-wrap: wrap; /* Para que se ajusten en pantallas chicas */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Colores de botón adicionales */
+.btn-priority-high {
+  background-color: var(--priority-high);
+  color: var(--text-light-primary);
+}
+.btn-priority-high:hover { opacity: 0.85; }
+
+.btn-priority-medium {
+  background-color: var(--priority-medium);
+  color: var(--text-light-primary);
+}
+.btn-priority-medium:hover { opacity: 0.85; }
+
+/* Resultado del Impacto */
+.impact-result {
+  background-color: var(--bg-dark-primary);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.impact-result strong {
+  font-size: 1.5rem;
+  color: var(--text-light-primary);
+}
+
+/* Caja de Sugerencias */
+.suggestions-box {
+  background-color: var(--bg-dark-primary);
+  border: 1px solid var(--accent-purple);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.suggestions-box h4 {
+  margin-top: 0;
+  color: var(--accent-purple);
+}
+.suggestions-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.suggestions-box li {
+  color: var(--text-light-secondary);
+}
+.suggestions-box li strong {
+  color: var(--text-light-primary);
+}
+
+/* 11. Estilos para la Tab de Requisitos (Edición y Reportes) */
+
+/* Mensaje de error (Func 2) */
+.form-error {
+  background-color: #450a0a; /* Rojo oscuro */
+  border: 1px solid var(--priority-high);
+  color: var(--text-light-primary);
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+/* Caja de Reporte (Func 3) */
+.report-box {
+  background-color: var(--bg-dark-primary);
+  border: 1px solid var(--accent-green);
+  color: var(--text-light-primary);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.report-box h4 {
+  margin-top: 0;
+  color: var(--accent-green);
+}
+.report-box p {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+.report-box strong {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Acciones en la lista de requisitos (Editar/Borrar) (Func 4) */
+.req-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilos de botones pequeños para acciones */
+.btn-edit, .btn-delete, .btn-save, .btn-cancel {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.btn-edit { color: var(--priority-medium); }
+.btn-save { color: var(--accent-green); }
+.btn-delete { color: var(--priority-high); font-size: 1.2rem; }
+.btn-cancel { color: var(--text-light-secondary); }
+
+/* Contenedor de Modo Edición (Func 4) */
+.req-edit-mode {
+  width: 100%;
+}
+.req-edit-mode input, .req-edit-mode select {
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no desborde */
+  margin-bottom: 10px;
+}
+/* Flexbox para alinear botones de guardado */
+.req-edit-mode .req-actions {
+  justify-content: flex-end; /* Alinea Guardar/Cancelar a la derecha */
+}
+
+
+/* 12. Estilos para la Tab de Codificación */
+.code-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 13. Estilos para la Tab de Pruebas */
+.report-box-pruebas {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+/* Func 2: Fallo de prueba */
+.report-fail {
+  background-color: #450a0a;
+  border-color: var(--priority-high);
+}
+.report-fail h4 {
+  color: var(--priority-high);
+  margin-top: 0;
+}
+
+/* Func 3: Pruebas exitosas */
+.report-success {
+  background-color: #064E3B; /* Verde oscuro */
+  border-color: var(--accent-green);
+}
+.report-success h4 {
+  color: var(--accent-green);
+  margin-top: 0;
+}
+
+/* 14. Estilos para el Dashboard (Alertas) */
+/* Func 2: Alerta de Pico */
+.dashboard-alert {
+  background-color: #450a0a;
+  border: 1px solid var(--priority-high);
+  color: var(--text-light-primary);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0 0 0; /* Margen superior */
+}
+.dashboard-alert strong {
+  color: var(--priority-high);
+}
+
+/* Func 3: Texto de Benchmark */
+.dashboard-info {
+  margin-top: 15px;
+  font-style: italic;
+  color: var(--text-light-secondary);
+}
+
+/* Pone un fondo más claro al canvas del gráfico */
+.dashboard-container canvas {
+  background-color: var(--bg-dark-secondary); /* Fondo de "tarjeta" */
+  border-radius: 6px;
+  padding: 10px; /* Despega el gráfico de los bordes */
+  margin-top: 15px;
+}
+
+/* 15. Estilos para la Tab de Reportes */
+.report-final-box {
+  background-color: var(--bg-dark-primary);
+  border: 2px solid var(--accent-green);
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.report-stats {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background-color: var(--bg-dark-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid #334155;
+}
+
+.stat-card-label {
+  font-size: 1rem;
+  color: var(--text-light-secondary);
+  margin-bottom: 10px;
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-light-primary);
+}
+
+.stat-card-value.green {
+  color: var(--accent-green);
+}
+
+/* 16. Estilos para la Tab de Despliegue */
+.deploy-step {
+  border: 1px solid var(--bg-dark-secondary);
+  border-left: 4px solid var(--priority-medium);
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: var(--bg-dark-primary);
+}
+
+.deploy-step h4 {
+  margin-top: 0;
+  color: var(--priority-medium);
+}
+
+.deploy-log {
+  background-color: #000;
+  color: #f1f1f1;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 15px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--text-light-secondary);
+}
+
+/* Estilos para los reportes de pre-check e issue */
+.pre-check-report {
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.pre-check-pass {
+  background-color: #064E3B;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+}
+.pre-check-fail {
+  background-color: #450a0a;
+  border: 1px solid var(--priority-high);
+  color: var(--priority-high);
+}
