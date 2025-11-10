@@ -27,7 +27,7 @@ ChartJS.register(
 );
 
 // URL de tu API (backend)
-const API_URL = 'http://localhost:5001';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 // --- CÓDIGO DE EJEMPLO (AHORA GLOBAL) ---
 const CODIGO_INEFICIENTE_EJEMPLO = `import time
